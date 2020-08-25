@@ -66,18 +66,25 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-    console.log(message.content.toLowerCase().slice(0,2))
+    if (message.member.user.id == "736872553938944070") return;
+    /*console.log(message.content.toLowerCase().slice(0,2))
     if (message.content.toLowerCase().slice(0,2) == "my") {
         var newStr = "OUR " + message.content.slice(3,message.content.length) + " comrade";
         message.channel.send(newStr);
     } else {
         var str = message.content
         for (var i = 0; i < str.length; i++) {
-            if (str.charAt(i).toLowerCase() == "m" && str.charAt(i+1).toLowerCase() == "y") {
+            if (str.charAt(i).toLowerCase() == "m" && str.charAt(i+1).toLowerCase() == "y" && str.charAt(i+2).toLowerCase() === " ") {
                 var newStr = "OUR " + message.content.slice(i+3,message.content.length) + " comrade";
                 message.channel.send(newStr);
             }
         }
+    }*/
+    var string = message.content;
+    if (string.toLowerCase().includes("my ")) {
+        const idx = string.indexOf("my");
+        const item = string.slice(idx + 3);
+        message.channel.send("OUR " + item + " comrade");
     }
 });
 
