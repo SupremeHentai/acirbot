@@ -1,6 +1,9 @@
 const Discord = require('discord.js');
+var fs = require('fs');
 const client = new Discord.Client();
 const prefix = "73:";
+
+var token = JSON.parse(fs.readFileSync("auth.json")).token;
 
 client.once('ready', () => {
 	console.log('Ready!');
@@ -57,4 +60,4 @@ client.on('message', message => {
     }
 });
 
-client.login('NzM2ODcyNTUzOTM4OTQ0MDcw.Xx1ICw.PK_NmIAsDelSB61blpXPm1sdCmA');
+client.login(token);
