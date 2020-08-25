@@ -41,9 +41,19 @@ client.on('message', message => {
 client.on('message', message => {
     console.log(message.channel.name);
     len = message.content.length;
-    if (message.content.slice(len-3,len) == "nig") {
+    if (message.content.slice(len-3,len).toLowerCase() == "nig") {
         if (basedChannels.includes(message.channel.name)) {
             const attachment = new Discord.MessageAttachment('gers.jpg');
+            message.channel.send(attachment);
+        }
+    }
+});
+
+client.on('message', message => {
+    len = message.content.length;
+    if (message.content.includes("hentai")) {
+        if (basedChannels.includes(message.channel.name)) {
+            const attachment = new Discord.MessageAttachment('import.jpg');
             message.channel.send(attachment);
         }
     }
