@@ -66,6 +66,22 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
+    console.log(message.content.toLowerCase().slice(0,2))
+    if (message.content.toLowerCase().slice(0,2) == "my") {
+        var newStr = "OUR " + message.content.slice(3,message.content.length) + " comrade";
+        message.channel.send(newStr);
+    } else {
+        var str = message.content
+        for (var i = 0; i < str.length; i++) {
+            if (str.charAt(i).toLowerCase() == "m" && str.charAt(i+1).toLowerCase() == "y") {
+                var newStr = "OUR " + message.content.slice(i+3,message.content.length) + " comrade";
+                message.channel.send(newStr);
+            }
+        }
+    }
+});
+
+client.on('message', message => {
     if (message.content.toLowerCase() == "around the world") {
         /*for (var i = 0; i < 12; i++) {
             message.channel.send("around the world\naround the world\naround the world\naround the world\n\naround the world\naround the world\naround the world\naround the world\n\naround the world\naround the world\naround the world\naround the world\n\n");
