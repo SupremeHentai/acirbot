@@ -170,5 +170,25 @@ client.on('message', message => {
         message.channel.send("🐒")
     }
 });
-
+client.on('message', message =>{
+    if (message.content.toLowerCase().includes("fun word")){
+        rand = Math.random()*75
+        console.log(rand);
+        let niceWords = ["abbie","abe","ABC","abo","abbo","afro engineering",
+                    "african engineering","nigger rigging","阿差","ali baba",
+                    "alligator bait","gator bait","alpine serb","ape","banana",
+                    "beaner","bog irish","bong","bounty bar","brownie","cabbage eater",
+                    "camel jockey","cheesehead","chease-eating surrender moneky",
+                    "chefur","ching chonng","chink","chinky","choonky","coconut",
+                    "coon","cracker","darky","dink","eight ball","gaijin",
+                    "golliwog","gook","guizi","鬼子","hajji","hori","indon","indognesial",
+                    "indog","jap", "jewboy", "kebab", "kimchi", "kike", "kurombo",
+                    "laowai", "老外", "locust", "蝗蟲", "mayonnaise monkey", "niglet",
+                    "nig-nog","nigger","nig", "nigga", "niggress", "nigette", "nip",
+                    "oreo","russki","sandnigger","sheep shagger","snow nigger",
+                    "wigger","xiao riben","小日本","黑人","黑鬼","fraser is gay"]
+        message.channel.send(niceWords[rand])
+        //screw you acir
+    }
+});
 client.login(token);
