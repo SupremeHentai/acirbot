@@ -165,4 +165,10 @@ client.on('message', message => {
     }
 });
 
+client.on('message', message => {
+    if (message.content.toLowerCase().includes("return to monke")) {
+        message.channel.send("🐒")
+    }
+});
+
 client.login(token);
