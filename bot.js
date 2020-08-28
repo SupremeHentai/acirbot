@@ -159,7 +159,7 @@ client.on('message', message => {
 client.on('message', message => {
     rand = Math.random()
     console.log(rand);
-    if (rand > 0.99) {
+    if (rand > 0.999) {
         const attachment = new Discord.MessageAttachment('kunt.png');
         message.channel.send(attachment);
     }
