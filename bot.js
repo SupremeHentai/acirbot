@@ -191,4 +191,17 @@ client.on('message', message =>{
         //screw you acir
     }
 });
+client.on('message', message =>{
+    if(message.content.toLowerCase().includes("stonk forecast")){
+        rand = Math.trunc(Math.random()*2)
+        console.log(rand);
+        if(rand >0.5){
+            message.channel.send('stonks will go up')
+        }
+        else{
+            message.channel.send('stonk will go down')
+        }
+	//fraser is gay lmao
+    }
+});
 client.login(token);
